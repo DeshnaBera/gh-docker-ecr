@@ -58,7 +58,7 @@ resource "aws_ecr_lifecycle_policy" "lifecycle_policy" {
       "selection": {
         "tagStatus": "tagged",
         "tagPatternList": [
-          "snapshot*"
+          "*snapshot"
         ],
         "countType": "sinceImagePushed",
         "countUnit": "days",
