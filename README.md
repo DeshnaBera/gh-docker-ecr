@@ -1,22 +1,12 @@
-# Docker Image Deployment to AWS ECR with Lifecycle Policy using Terraform and GitHub Actions
+# Build and Push Docker Image to AWS ECR with Lifecycle Policy using Terraform and GitHub Actions
 
 This project is designed to build a Docker image from a Dockerfile, push it to AWS Elastic Container Registry (ECR) as an image snapshot, and manage the lifecycle policy of the images using Terraform. The deployment process is automated using GitHub Actions.
-
-## Table of Contents
-
-- Prerequisites
-- Project Structure
-- Setup
-- Usage
-- Contributing
-- License
 
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
 
 - You have an AWS account with the necessary permissions.
-- You have Docker installed on your local machine.
 - You have Terraform installed on your local machine.
 - You have configured AWS CLI with your credentials.
 - You have a GitHub account and repository set up.
@@ -25,7 +15,7 @@ Before you begin, ensure you have met the following requirements:
 
 The repository is organized into several key directories:
 
-- **.github/workflows**: Contains the GitHub Actions workflow file (`deploy.yml`) that automates the deployment process.
+- **.github/workflows**: Contains the GitHub Actions workflow file (`build.yml`) that automates the deployment process.
 - **docker**: Includes the Dockerfile and any other necessary files for building the Docker image.
 - **terraform**: Contains the Terraform configuration files for creating the ECR repository and setting up the lifecycle policy.
 
@@ -40,7 +30,7 @@ The repository is organized into several key directories:
 
 1. **Dockerfile**: The `docker` directory contains the Dockerfile, which defines the application's environment and dependencies.
 2. **Terraform Configuration**: The `terraform` directory contains the configuration files to create the ECR repository and set up the lifecycle policy. This includes defining the lifecycle rules to manage the retention and deletion of images.
-3. **GitHub Actions**: The workflow file (`deploy.yml`) in the `.github/workflows` directory automates the process of building the Docker image, pushing it to AWS ECR, and applying the Terraform configuration. It uses the AWS credentials stored as GitHub Secrets to authenticate and push the image.
+3. **GitHub Actions**: The workflow file (`build.yml`) in the `.github/workflows` directory automates the process of building the Docker image, pushing it to AWS ECR, and applying the Terraform configuration. It uses the AWS credentials stored as GitHub Secrets to authenticate and push the image.
 
 ## Summary
 
